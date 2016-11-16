@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<body>
+<div>
+	<h1>Ajoutez une carte de paiement : <a href="{{ path('cb_create') }}"> Ajouter </a> </h1>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<h1> Cb Infos : </h1>
+		<p>Nom titulaire : {{cb.0.getLastName()}}</p>
+		<p>Prénom titulaire : {{cb.0.getFirstName()}}</p>
+		<p>Numéro carte : XXXX XXXX XXXX {{cb.0.getCarteNumber()|slice(12, 16)}}</p>
+		<p> Date : {{ cb.0.getMonth() }}/{{ cb.0.getYear() }} </p>
+		<a href="{{ path('cb_edit', {'id_cb': cb.0.id }) }}"> Modifier </a>
+	</div>
+</div>
+</body>
