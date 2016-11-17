@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-{{ form_start(form) }}
-<input type="submit" value="Ajouter/Modifier">
-{{ form_end(form) }}
+<h1 class="h1_title"> Formulaire d'ajout d'une carte bancaire </h1>
+<div class="row cb_row">
+	<div class="col-md-3 cb">
+		{{ form_start(form) }}
+		<input type="submit" value="Ajouter/Modifier" class="submit_cb btn-primary">
+		{{ form_end(form) }}
+	</div>
+</div>
 
 {% endblock body %}

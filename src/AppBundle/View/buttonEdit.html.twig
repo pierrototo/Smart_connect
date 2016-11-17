@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-{{ form_start(form) }}
-<input type="submit" value="Modifier">
-{{ form_end(form) }}
+<h1 class="h1_title"> Formulaire de modification d'un bouton </h1>
+<div class="row button_row">
+	<div class="col-md-3 button">
+		{{ form_start(form) }}
+		<input type="submit" value="Modifier" class="submit_button btn-primary">
+		{{ form_end(form) }}
+	</div>
+</div>
 
 {% endblock body %}

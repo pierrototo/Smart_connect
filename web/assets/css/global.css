@@ -1,3 +1,59 @@
+/* Style page edition bouton */
+
+.button_row{
+	margin-top: 20px;
+}
+
+.button input {
+	float: right;
+	width: 168px;
+
+}
+
+.button select {
+	float: right;
+}
+
+.button label {
+	font-weight: bold;
+}
+
+.submit_button {
+	position: absolute;
+    bottom: -50px;
+    border-radius: 25px;
+}
+
+/* Fin style page edition bouton */
+
+/* Style page ajout/edition CB */
+
+.cb_row{
+	margin-top: 20px;
+}
+
+.cb input {
+	float: right;
+	width: 168px;
+
+}
+
+.cb select {
+	float: right;
+}
+
+.cb label {
+	font-weight: bold;
+}
+
+.submit_cb {
+	position: absolute;
+    bottom: -50px;
+    border-radius: 25px;
+}
+
+/* Fin style page ajout/edition CB */
+
 /* Style page qui liste cbs */
 
 .cb_item {
