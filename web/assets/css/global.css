@@ -1,0 +1,124 @@
+/* Style page qui liste cbs */
+
+.cb_item {
+	border-bottom: 1px solid black;
+    max-width: 380px;
+    padding-bottom: 20px;
+}
+
+.h2_title {
+	color: #7bafd4;
+	margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.btn_cb {
+	border-radius: 25px;
+}
+
+.add_cb {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+/* Fin style page qui liste cbs */
+
+/* Style page d'enregistrement */
+
+.register {
+	margin-left: 10px;
+}
+
+.register input {
+	float: right;
+	width: 168px;
+
+}
+
+.register select {
+	float: right;
+}
+
+.btn_register {
+	border-radius: 25px;
+	margin-top: 20px;
+}
+
+.register label {
+	font-weight: bold;
+}
+
+.cb_row {
+	padding-left: 10px;
+}
+
+/* Fin style page d'enregistrement */
+
+/* Style de la page de connexion */
+
+.login {
+	margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.logged_in {
+	margin-top: 20px;
+}
+
+.button_login {
+	border-radius: 25px;
+}
+
+.submit_login {
+	margin-left: 10px;
+}
+
+/* Fin style de la page de connexion */
+
+
+/* Style de la liste de boutons*/
+
+.button_list_item {
+	margin-top: 30px;
+	border: 2px solid #7bafd4;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 25px;
+}
+
+.button_row {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.button_list_item:hover {
+    background-color: #e5e4e2;
+}
+
+.button_list_item p {
+	color: #7bafd4;
+}
+
+.button_list_item > .to_padding {
+	padding-left: 10px;
+}
+
+.button_list_item > .to_center {
+	text-align: center;
+}
+
+.button_list_item button {
+	border-radius: 25px;
+}
+
+.button_list_item p>b {
+	color: black;
+}
+
+.h1_title {
+	text-align: center;
+	color: #7bafd4;
+}
+
+/* Fin style de la liste de boutons*/

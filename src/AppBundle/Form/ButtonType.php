@@ -11,8 +11,6 @@ class ButtonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        var_dump($options);
-
         $builder->add('button_product');
         $builder->add('button_price');
         $builder->add('alert', ChoiceType::class, array(

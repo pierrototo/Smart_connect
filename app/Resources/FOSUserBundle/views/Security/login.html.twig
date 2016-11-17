@@ -1,12 +1,15 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% extends 'base.html.twig' %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
+{% block body %}
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-
+<h1 class="h1_title"> Page de connexion </h1>
+<div class="row">
+<div class="login col-md-6" >
 <form action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
@@ -19,12 +22,14 @@
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     <label for="remember_me">{{ 'Se rappeler de moi'|trans }}</label>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'Se connecter'|trans }}" />
+    <p class="logged_in"><input type="submit" id="_submit" name="_submit" value="{{ 'Se connecter'|trans }}" class="btn-primary button_login"/></p>
 </form>
+</div>
+</div>
+<div class="row">
+    <div class="submit_login col-md-6">
+        {{ 'Vous n\'êtes par encore inscrit ? '}} <a href="{{ path('fos_user_registration_register') }}"> S'enregistrer </a>
+    </div>
+</div>
 
-{{ 'vous n\'êtes par encore inscrit ? '}}
-                <a href="{{ path('fos_user_registration_register') }}">
-                    S'enregistrer
-                </a>
-
-{% endblock fos_user_content %}
+{% endblock body %}

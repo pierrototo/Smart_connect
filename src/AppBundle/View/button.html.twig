@@ -1,52 +1,66 @@
-<!DOCTYPE html>
-<body>
-<div class="row">
-	<div class="col-md-6">
-		<p>Nom du boutton : {{buttons.0.getName()}}</p>
-		<p>Nom du produit lié au boutton : {{buttons.0.getButtonProduct()}}</p>
-		<p>Prix du produit lié au boutton : {{buttons.0.getButtonPrice()}}</p>
-		<p>Alert liée au boutton : {% if buttons.0.getAlert()%}YES{% else %} NO {% endif %} </p>
-		<a href="{{ path('buttons_edit', {'id_button': buttons.0.id }) }}"> Modifier </a>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1 class="h1_title"> Votre panel de bouttons </h1>
+<div class="row button_row">
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.0.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.0.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.0.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.0.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.0.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.1.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.1.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.1.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.1.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.1.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.2.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.2.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.2.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.2.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.2.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
+	</div>
+
+</div>
+
+<div class="row button_row">
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.3.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.3.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.3.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.3.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.3.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.4.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.4.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.4.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.4.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.4.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="button_list_item">
+			<p class="to_padding"><b>Nom du boutton : </b>{{buttons.5.getName()}}</p>
+			<p class="to_padding"><b>Nom du produit lié au boutton : </b>{{buttons.5.getButtonProduct()}}</p>
+			<p class="to_padding"><b>Prix du produit lié au boutton : </b>{{buttons.5.getButtonPrice()}}</p>
+			<p class="to_padding"><b>Alert liée au boutton : </b>{% if buttons.5.getAlert()%}YES{% else %} NO {% endif %} </p>
+			<p class="to_center"><a href="{{ path('buttons_edit', {'id_button': buttons.5.id }) }}"><button class="btn-primary"> Modifier </button></a></p>
+		</div>
 	</div>
 </div>
-
-<div>
-<p>Nom du boutton : {{buttons.1.getName()}}</p>
-<p>Nom du produit lié au boutton : {{buttons.1.getButtonProduct()}}</p>
-<p>Prix du produit lié au boutton : {{buttons.1.getButtonPrice()}}</p>
-<p>Alert liée au boutton : {% if buttons.1.getAlert()%}YES{% else %} NO {% endif %} </p>
-<a href="{{ path('buttons_edit', {'id_button': buttons.1.id }) }}"> Modifier </a>
-</div>
-
-<div>
-<p>Nom du boutton : {{buttons.2.getName()}}</p>
-<p>Nom du produit lié au boutton : {{buttons.2.getButtonProduct()}}</p>
-<p>Prix du produit lié au boutton : {{buttons.2.getButtonPrice()}}</p>
-<p>Alert liée au boutton : {% if buttons.2.getAlert()%}YES{% else %} NO {% endif %} </p>
-<a href="{{ path('buttons_edit', {'id_button': buttons.2.id }) }}"> Modifier </a>
-</div>
-
-<div>
-<p>Nom du boutton : {{buttons.3.getName()}}</p>
-<p>Nom du produit lié au boutton : {{buttons.3.getButtonProduct()}}</p>
-<p>Prix du produit lié au boutton : {{buttons.3.getButtonPrice()}}</p>
-<p>Alert liée au boutton : {% if buttons.3.getAlert()%}YES{% else %} NO {% endif %} </p>
-<a href="{{ path('buttons_edit', {'id_button': buttons.3.id }) }}"> Modifier </a>
-</div>
-
-<div>
-<p>Nom du boutton : {{buttons.4.getName()}}</p>
-<p>Nom du produit lié au boutton : {{buttons.4.getButtonProduct()}}</p>
-<p>Prix du produit lié au boutton : {{buttons.4.getButtonPrice()}}</p>
-<p>Alert liée au boutton : {% if buttons.4.getAlert()%}YES{% else %} NO {% endif %} </p>
-<a href="{{ path('buttons_edit', {'id_button': buttons.4.id }) }}"> Modifier </a>
-</div>
-
-<div>
-<p>Nom du boutton : {{buttons.5.getName()}}</p>
-<p>Nom du produit lié au boutton : {{buttons.5.getButtonProduct()}}</p>
-<p>Prix du produit lié au boutton : {{buttons.5.getButtonPrice()}}</p>
-<p>Alert liée au boutton : {% if buttons.5.getAlert()%}YES{% else %} NO {% endif %} </p>
-<a href="{{ path('buttons_edit', {'id_button': buttons.5.id }) }}"> Modifier </a>
-</div>
-</body>
+{% endblock body %}

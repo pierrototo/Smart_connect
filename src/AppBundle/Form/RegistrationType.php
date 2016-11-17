@@ -24,16 +24,6 @@ class RegistrationType extends AbstractType
         ));
         $builder->add('phone_number');
         $builder->add('token_zinc');
-        $builder->add('roles', 'collection', array(
-                   'type' => 'choice',
-                   'options' => array(
-                       'label' => 'rôle', /* Ajoutez cette ligne */
-                       'choices' => array(
-                           'ROLE_ADMIN' => 'Admin'
-                       )
-                   )
-               )
-           );
     }
 
     public function getParent()

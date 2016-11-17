@@ -83,3 +83,9 @@ vmelnik_doctrine_encrypt:
     encryptor_class:      ~ 
 #  Now it's only one db driver is supported - orm
     db_driver:            orm 
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~

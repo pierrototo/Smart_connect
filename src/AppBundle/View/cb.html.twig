@@ -1,16 +1,38 @@
-<!DOCTYPE html>
-<body>
-<div>
-	<h1>Ajoutez une carte de paiement : <a href="{{ path('cb_create') }}"> Ajouter </a> </h1>
-</div>
-<div class="row">
-	<div class="col-md-6">
-		<h1> Cb Infos : </h1>
-		<p>Nom titulaire : {{cb.0.getLastName()}}</p>
-		<p>Prénom titulaire : {{cb.0.getFirstName()}}</p>
-		<p>Numéro carte : XXXX XXXX XXXX {{cb.0.getCarteNumber()|slice(12, 16)}}</p>
-		<p> Date : {{ cb.0.getMonth() }}/{{ cb.0.getYear() }} </p>
-		<a href="{{ path('cb_edit', {'id_cb': cb.0.id }) }}"> Modifier </a>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1 class="h1_title"> Vos cartes bancaires </h1>
+
+<div class="row cb_row">
+	<div class="col-md-12">
+		{% for item in cb %}
+		{% if item is not empty %}
+		<h2 class="h2_title"> Vos informations bancaires </h2>
+		<p><b>Nom titulaire : </b>{{item.getLastName()}}</p>
+		<p><b>Prénom titulaire : </b>{{item.getFirstName()}}</p>
+		<p><b>Numéro carte : </b>XXXX XXXX XXXX {{item.getCarteNumber()|slice(12, 16)}}</p>
+		<p><b>Date : </b>{{ cb.0.getMonth() }}/{{ item.getYear() }} </p>
+		<a href="{{ path('cb_edit', {'id_cb': cb.0.id }) }}"><button class="btn-primary btn_cb"> Modifier </button></a>
+		<p class="cb_item"> </p>
+		{% else %}
+		<p> Aucune carte enregistée </p>
+		{% endif %}
+		{% endfor %}
 	</div>
 </div>
-</body>
+
+
+{% if cb is empty %}
+	<div class="add_cb">
+		<p>Ajoutez une carte de paiement : <a href="{{ path('cb_create') }}"> Ajouter </a> </p>
+	</div>
+	<div>
+	<p>Encore Aucune carte enregistrée ! </p>
+</div>
+{% else %}
+	<div class="add_cb">
+		<p>Ajoutez une autre carte de paiement : <a href="{{ path('cb_create') }}"> Ajouter </a> </p>
+	</div>
+{% endif %}
+
+{% endblock body %}
