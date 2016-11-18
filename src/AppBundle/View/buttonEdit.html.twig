@@ -3,8 +3,13 @@
 {% block body %}
 <h1 class="h1_title"> Formulaire de modification d'un bouton </h1>
 <div class="row button_row">
-	<div class="col-md-3 button">
+	<div class="col-md-12 button">
 		{{ form_start(form) }}
+		<div class="row row_second">
+		<div class="row_special row_special_1">{{ form_row(form.search, {'label': 'Votre recherche'}) }} </div>
+		<div class="row_special">{{ form_row(form.category, {'label': 'Votre Catégorie'}) }}</div>
+		<div class="row_special"><div><input type="submit" value="Rechercher" class="btn-primary submit_button_search"></div></div>
+		</div>
 		<input type="submit" value="Modifier" class="submit_button btn-primary">
 		{{ form_end(form) }}
 	</div>

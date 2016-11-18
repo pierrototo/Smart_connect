@@ -3,15 +3,42 @@
 .button_row{
 	margin-top: 20px;
 }
-
-.button input {
-	float: right;
-	width: 168px;
+.row_special > div > input {
+	float:left;
+    margin-right: 15px;
 
 }
 
-.button select {
-	float: right;
+.row_special > div > label {
+	float:left;
+	margin-right: 5px;
+}
+
+.row_special_1 {
+	margin-left: 15px;
+}
+
+.row_special > div > select {
+	float:left;
+    margin-right: 15px;
+}
+
+.submit_button_search {
+	border-radius: 25px;
+}
+
+.row_second {
+	margin-bottom: 20px;
+	width: 715px;
+    border: 1px solid;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    margin-left: 0px;
+}
+
+.button input {
+	width: 168px;
+
 }
 
 .button label {

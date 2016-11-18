@@ -4,6 +4,9 @@ parameters:
 #    parameter_name: value
 
 services:
+    amazon.service:
+        class: AppBundle\Service\AmazonECS
+        arguments: ~
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

@@ -41,15 +41,57 @@ class ButtonController extends Controller
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($button);
-            $em->flush();
 
-            return $this->redirectToRoute('buttons_list');
+            if ($form->get("product")->getData() == "Y0L0"){
+                if ($form->get("category")->getData() == 0){
+                    $category = 'DVD';
+                }
+                else{
+                    $category = 'Music';
+                }
+                $search = $form->get("search")->getData();
+                //$button->search;
+
+                //code su service
+                $client = $this->get("amazon.service");
+
+                $response1  = $client->category($category)->page(1)->search($search);
+                $response2  = $client->category($category)->page(2)->search($search);
+                $response3  = $client->category($category)->page(3)->search($search);
+
+                $list_of_items = array();
+
+                for($i = 0; $i<count($response1->Items->Item); $i++)
+                {
+                    array_push($list_of_items, $response1->Items->Item[$i]);
+                }
+
+                for($i = 0; $i<count($response2->Items->Item); $i++)
+                {
+                    array_push($list_of_items, $response2->Items->Item[$i]);
+                }
+
+                for($i = 0; $i<count($response3->Items->Item); $i++)
+                {
+                    array_push($list_of_items, $response3->Items->Item[$i]);
+                }
+
+                $form = $this->createForm(new ButtonType($list_of_items), $button);
+            }
+
+            else {
+                // A modifier
+                //$button->setButtonProduct($form->get("product")->getData());
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($button);
+                $em->flush();
+
+                return $this->redirectToRoute('buttons_list');
+            }
         }
 
         return array(
-            'buttons' => $button,
+            'button' => $button,
             'form'   => $form->createView(),
         );
     }
